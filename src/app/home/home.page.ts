@@ -7,6 +7,7 @@ import { NewsServiceService } from '../news-service.service';
 })
 export class HomePage implements OnInit{
 
+  newsArray:any = [];
   constructor(private newsService:NewsServiceService) {}
 
   ngOnInit(){
@@ -15,6 +16,7 @@ export class HomePage implements OnInit{
 
   loadNews(){
     this.newsService.getNews().subscribe((res)=>{
+      this.newsArray = res['articles'];
       console.log('res',res);
     },(err)=>{
       console.log('err',err);

@@ -16,6 +16,6 @@ export class NewsServiceService {
   constructor(private http:HttpClient) { }
 
   getNews(){
-    return this.http.get(`${API_URL}top-headlines?country=in&apiKey=${API_KEY}`)
+    return this.http.get(`${API_URL}top-headlines?country=us&apiKey=${API_KEY}`)
   }
 }
