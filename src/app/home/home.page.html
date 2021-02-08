@@ -19,8 +19,19 @@
 
   <ion-row>
     <ion-col size-sm="4" offset-sm="4">
+
+      <ion-item>
+        <ion-label>Country</ion-label>
+        <ion-select okText="Okay" cancelText="Dismiss">
+          <ion-select-option *ngFor="let c of country | keyvalue" [value]="c.value">{{c.key}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+
+
+
       <ion-card *ngFor="let news of newsArray">
-        <ion-img [src]="news.urlToImage"></ion-img>
+        <ion-img [src]="news.urlToImage" ></ion-img>
 
         <ion-card-header>
           <ion-card-subtitle>{{news.publishedAt | date}}</ion-card-subtitle>
